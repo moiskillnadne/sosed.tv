@@ -1,38 +1,106 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	padding: 0;
+}
+
 .App {
-  text-align: center;
+	width: 100%;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 1fr 1fr;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.video-container {
+	/* Outside */
+	grid-column: 1/2;
+	grid-row: 1/2;
+
+	/* Inside  */
+	display: grid;
+	grid-template-columns: 1fr 3fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.videoplayerList {
+	/* Outside */
+	grid-column: 1/2;
+
+	/* Inside */
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.preview_wrap {
+	height: 100%;
+	width: 100%;
+	border-right: 1px solid silver;
+	border-bottom: 1px solid silver;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.preview {
+	width: 70px;
+	height: 70px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.preview_wrap:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.videoplayer {
+	grid-column: 2/3;
+	border-bottom: 1px solid silver;
+}
+
+.donate-container {
+	/* Outside */
+	grid-column: 1/2;
+	grid-row: 2/3;
+
+	/* Inside */
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.targetsDonate {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.targetIcon_wrap {
+	/* Outside */
+	width: 100px;
+	height: 150px;
+
+	/* Inside */
+	text-align: center;
+}
+
+.targetIcon_wrap:hover > .targetNumber > h3 {
+	transform: translateY(-20px);
+}
+
+.targetNumber {
+	margin-bottom: 10px;
+	height: 25px;
+	overflow: hidden;
+}
+
+.targetNumber > h3 {
+	transition: 0.6s;
+}
+
+.chat-container {
+	grid-column: 2/3;
+	grid-row: 1/3;
+	border-left: 1px solid silver;
 }

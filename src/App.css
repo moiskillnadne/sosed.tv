@@ -165,7 +165,7 @@ h6 {
 	background: rgba(99, 110, 114, 0.6);
 }
 
-.rules {
+.default-innerModal {
 	/* Outside */
 	width: 700px;
 	height: 500px;
@@ -174,23 +174,46 @@ h6 {
 	z-index: 9999;
 
 	/* Inside */
-	position: relative;
 	padding: 20px;
-	text-align: center;
-	background: rgba(45, 52, 54, 0.7);
-	overflow: hidden;
-	overflow-y: scroll;
-	cursor: default;
 
 	/* Text */
 	color: rgba(223, 230, 233, 1);
 	font-size: 18px;
 }
 
+.rules {
+	/* Inside */
+	position: relative;
+	text-align: center;
+	background: rgba(45, 52, 54, 0.7);
+	overflow: hidden;
+	overflow-y: scroll;
+	cursor: default;
+}
+
 .signup-wrap {
-	width: 100px;
-	height: 100px;
-	background: #000;
+	text-align: center;
+	cursor: default;
+	background: rgba(45, 52, 54, 0.7);
+	display: grid;
+	grid-template-rows: 50px 1fr 1fr;
+}
+
+.signup {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.SignInGoogle-button {
+	text-align: center;
+}
+
+/* This is Apple button size */
+.signin-button {
+	width: 250px;
+	height: 50px;
+	cursor: pointer;
 }
 
 .rules-modal_scroll-icon {

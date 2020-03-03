@@ -21,7 +21,7 @@ const {
     <div className="default-modal"
          ref = { RulesModalRef }
          onClick = { CloseModalFun }   >
-      <div className="rules"
+      <div className="rules default-innerModal"
            ref = { RulesRef }>
         <h1>
           {MultiLanguage.rus.buttons.rules}

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {
+  useState
+} from 'react';
 import './App.css';
 
 // Components
@@ -22,6 +24,11 @@ function App() {
     }
   }
 
+  const [
+    isSignIn,
+    setIsSignIn
+  ] = useState(false);
+
 
   return (
     <div className="App">
@@ -34,7 +41,9 @@ function App() {
 
       <Rules CloseModalFun = { CloseModalFun }/>
 
-      <SignUp CloseModalFun = { CloseModalFun } />
+      <SignUp CloseModalFun = { CloseModalFun }
+              isSignIn = {isSignIn}
+              setIsSignIn = {setIsSignIn} />
       
     </div>
   );

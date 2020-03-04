@@ -9,7 +9,9 @@ import SignUpModal from './SignUpModal';
 const SignUp = props => {
 
   const {
-    CloseModalFun
+    CloseModalFun,
+    isSignIn,
+    setIsSignIn,
   } = props;
 
   const SignUpModalRef = useRef(null);
@@ -28,7 +30,9 @@ const SignUp = props => {
       <SignUpButton OpenModalFun = { OpenModalFun }/>
 
       <SignUpModal SignUpModalRef = { SignUpModalRef }
-                   CloseModalFun = { CloseModalFun }    />
+                   CloseModalFun = { CloseModalFun }
+                   isSignIn = {isSignIn}
+                   setIsSignIn = {setIsSignIn}    />
 
     </>
   )

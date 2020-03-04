@@ -2,7 +2,7 @@ export const MultiLanguage = {
   rus: {
      buttons: {
        rules: 'ПРАВИЛА',
-       signUp: 'РЕГИСТРАЦИЯ'
+       signUp: 'АККАУНТ'
      },
      modal: {
        rules: [

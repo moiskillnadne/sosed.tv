@@ -41,8 +41,8 @@ h6 {
 .preview_wrap {
 	height: 100%;
 	width: 100%;
-	border-right: 1px solid silver;
-	border-bottom: 1px solid silver;
+	border-right: 1px solid rgba(108, 92, 231, 1);
+	border-bottom: 1px solid rgba(108, 92, 231, 1);
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -55,12 +55,12 @@ h6 {
 }
 
 .preview_wrap:hover {
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(108, 92, 231, 0.15);
 }
 
 .videoplayer {
 	grid-column: 2/3;
-	border-bottom: 1px solid silver;
+	border-bottom: 1px solid rgba(108, 92, 231, 1);
 }
 
 .donate-container {
@@ -82,30 +82,56 @@ h6 {
 .targetIcon_wrap {
 	/* Outside */
 	width: 100px;
-	height: 150px;
+	height: 175px;
 
 	/* Inside */
 	text-align: center;
 }
 
-.targetIcon_wrap:hover > .targetNumber > h3 {
-	transform: translateY(-20px);
+.targetIcon,
+.targetIcon > img {
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
 }
 
-.targetNumber {
-	margin-bottom: 10px;
-	height: 25px;
+.targetIcon_wrap:hover > .targetName > h3 {
+	transform: translateY(34px);
+}
+
+.targetIcon_wrap:hover > .targetDonateToName > h3 {
+	transform: translateY(0px);
+	transition-delay: 0.15s;
+}
+
+.targetName {
+	height: 30px;
 	overflow: hidden;
 }
 
-.targetNumber > h3 {
+.targetName > h3 {
+	padding-bottom: 10px;
+}
+
+.targetName > h3,
+.targetDonateToName > h3 {
 	transition: 0.6s;
+}
+
+.targetDonateToName {
+	height: 45px;
+	overflow: hidden;
+}
+
+.targetDonateToName > h3 {
+	transform: translateY(-42px);
 }
 
 .chat-container {
 	grid-column: 2/3;
 	grid-row: 1/3;
-	border-left: 1px solid silver;
+	border-left: 1px solid rgba(108, 92, 231, 1);
 }
 
 /* ____________ Modal Windows ____________________ */
@@ -115,7 +141,9 @@ h6 {
 	width: 150px;
 	height: 40px;
 	border-radius: 6px;
-	background: rgba(178, 190, 195, 1);
+	border-width: 0px;
+	background: rgba(108, 92, 231, 1);
+	box-shadow: 0px 0px 4px rgba(99, 110, 114, 1);
 }
 
 .rules-container {
@@ -132,20 +160,21 @@ h6 {
 
 .default-btn {
 	background: rgba(0, 0, 0, 0);
+	border: none;
 	border-radius: 6px;
 	width: 100%;
 	height: 100%;
-	color: rgba(45, 52, 54, 1);
+	color: rgba(223, 230, 233, 1);
 	font-size: 16px;
+	font-weight: bold;
 	transition: 0.3s;
 	outline: none;
-	box-shadow: 0px 0px 4px rgba(178, 190, 195, 1);
 }
 
 .default-btn:hover {
-	color: white;
+	color: rgba(178, 190, 195, 1);
 	cursor: pointer;
-	box-shadow: 0px 0px 8px rgba(178, 190, 195, 1);
+	box-shadow: 0px 0px 8px rgba(99, 110, 114, 1);
 }
 
 .default-modal {
@@ -196,13 +225,37 @@ h6 {
 	cursor: default;
 	background: rgba(45, 52, 54, 0.7);
 	display: grid;
-	grid-template-rows: 50px 1fr 1fr;
+	grid-template-rows: 50px 1fr;
 }
 
-.signup {
+.unAuthorized-container {
 	display: grid;
 	justify-content: center;
 	align-items: center;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+.authorized-container {
+	display: grid;
+	grid-template-rows: 2fr 1fr 1fr 1fr;
+}
+
+.logo-profile {
+	/* Outside */
+	justify-self: center;
+	align-self: center;
+
+	/* Inside */
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
+	background: red;
+	overflow: hidden;
+}
+.logo-profile > img {
+	width: 125px;
+	height: 125px;
+	border-radius: 50%;
 }
 
 .SignInGoogle-button {

@@ -6,25 +6,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#000000" />
 
-		<!-- Sign in with Google -->
-		<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
-		<meta
-			name="google-signin-client_id"
-			content="440508018667-u45huetcekpp65kgjh4kpmeb5e16j1bk.apps.googleusercontent.com"
-		/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-		<!-- <script src="../src/helpers/GoogleAuth.js"></script> -->
-
-		<!-- Sign in with Apple -->
+		<!-- VK open API -->
 		<script
+			src="https://vk.com/js/api/openapi.js?167"
 			type="text/javascript"
-			src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"
 		></script>
-		<meta name="appleid-signin-client-id" content="XXVA4956W4" />
-		<meta name="appleid-signin-scope" content="[SCOPES]" />
-		<meta name="appleid-signin-redirect-uri" content="[REDIRECT_URI]" />
-		<meta name="appleid-signin-state" content="[STATE]" />
-		<meta name="appleid-signin-use-popup" content="true" />
 
 		<meta
 			name="description"
@@ -59,6 +45,12 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+		-->
+
+		<script type="text/javascript">
+			VK.init({
+				apiId: 7346579,
+			});
+		</script>
 	</body>
 </html>

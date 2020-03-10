@@ -19,12 +19,12 @@ const unAuthorized = props => {
         cookiePolicy={'single_host_origin'}    />
 
 
-      <div id="appleid-signin" 
-            className="signin-button" 
-            data-color="white" 
-            data-border="false" 
-            data-type="sign in"></div>
-      </div>
+
+      
+
+    </div>
+
+
   );
 }
 

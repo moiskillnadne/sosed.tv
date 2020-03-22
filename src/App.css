@@ -8,15 +8,35 @@ h6 {
 	padding: 0;
 }
 
+/* Preloader */
+
+.preloader-wrap {
+	display: grid;
+	width: 100%;
+	height: 100vh;
+
+	background: rgba(45, 52, 54, 1);
+	transition: 0.5s;
+
+	justify-content: center;
+	align-items: center;
+}
+
+.preloader-wrap > h1 {
+	font-size: 56px;
+	color: rgba(108, 92, 231, 1);
+}
+
 .App {
 	width: 100%;
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: 2fr 1fr;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: 4fr 3fr;
 	position: relative;
 
 	font-family: sans-serif;
+	background: rgba(45, 52, 54, 1);
 }
 
 .video-container {
@@ -26,7 +46,7 @@ h6 {
 
 	/* Inside  */
 	display: grid;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 2fr 8fr;
 }
 
 .videoplayerList {
@@ -36,13 +56,25 @@ h6 {
 	/* Inside */
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	padding: 10px;
+}
+
+.videoplayerList > :nth-child(9),
+.videoplayerList > :nth-child(10) {
+	border-bottom-width: 0px !important;
+}
+
+.videoplayerList > :nth-child(odd) {
+	border-right: 1px solid rgba(178, 190, 195, 0.2);
+}
+
+.videoplayerList > :nth-child(n) {
+	border-bottom: 1px solid rgba(178, 190, 195, 0.2);
 }
 
 .preview_wrap {
 	height: 100%;
 	width: 100%;
-	border-right: 1px solid rgba(108, 92, 231, 1);
-	border-bottom: 1px solid rgba(108, 92, 231, 1);
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -60,7 +92,13 @@ h6 {
 
 .videoplayer {
 	grid-column: 2/3;
-	border-bottom: 1px solid rgba(108, 92, 231, 1);
+	padding: 15px 10px 10px 10px;
+}
+
+.videoplayer > div {
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .donate-container {
@@ -71,6 +109,7 @@ h6 {
 	/* Inside */
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 3fr 1fr;
 }
 
 .targetsDonate {
@@ -86,6 +125,7 @@ h6 {
 
 	/* Inside */
 	text-align: center;
+	color: rgba(178, 190, 195, 1);
 }
 
 .targetIcon,
@@ -131,7 +171,6 @@ h6 {
 .chat-container {
 	grid-column: 2/3;
 	grid-row: 1/3;
-	border-left: 1px solid rgba(108, 92, 231, 1);
 }
 
 /* ____________ Modal Windows ____________________ */
@@ -140,10 +179,10 @@ h6 {
 	/* Inside */
 	width: 150px;
 	height: 40px;
-	border-radius: 6px;
+	border-radius: 2px;
 	border-width: 0px;
 	background: rgba(108, 92, 231, 1);
-	box-shadow: 0px 0px 4px rgba(99, 110, 114, 1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .rules-container {
@@ -161,10 +200,10 @@ h6 {
 .default-btn {
 	background: rgba(0, 0, 0, 0);
 	border: none;
-	border-radius: 6px;
+	border-radius: 2px;
 	width: 100%;
 	height: 100%;
-	color: rgba(223, 230, 233, 1);
+	color: rgba(45, 52, 54, 1);
 	font-size: 16px;
 	font-weight: bold;
 	transition: 0.3s;
@@ -174,7 +213,6 @@ h6 {
 .default-btn:hover {
 	color: rgba(178, 190, 195, 1);
 	cursor: pointer;
-	box-shadow: 0px 0px 8px rgba(99, 110, 114, 1);
 }
 
 .default-modal {
@@ -220,55 +258,6 @@ h6 {
 	cursor: default;
 }
 
-.signup-wrap {
-	text-align: center;
-	cursor: default;
-	background: rgba(45, 52, 54, 0.7);
-	display: grid;
-	grid-template-rows: 50px 1fr;
-}
-
-.unAuthorized-container {
-	display: grid;
-	justify-content: center;
-	align-items: center;
-	grid-template-rows: 1fr 1fr 1fr;
-}
-
-.authorized-container {
-	display: grid;
-	grid-template-rows: 2fr 1fr 1fr 1fr;
-}
-
-.logo-profile {
-	/* Outside */
-	justify-self: center;
-	align-self: center;
-
-	/* Inside */
-	width: 125px;
-	height: 125px;
-	border-radius: 50%;
-	background: red;
-	overflow: hidden;
-}
-.logo-profile > img {
-	width: 125px;
-	height: 125px;
-	border-radius: 50%;
-}
-
-.SignInGoogle-button {
-	text-align: center;
-}
-
-/* This is Apple button size */
-.signin-button {
-	width: 250px;
-	height: 50px;
-	cursor: pointer;
-}
-
 .rules-modal_scroll-icon {
 	position: sticky;
 	width: 25px;
@@ -283,4 +272,208 @@ h6 {
 .rules-modal_scroll-icon > img {
 	width: 100%;
 	height: 100%;
+}
+
+.chat-container {
+	display: grid;
+	grid-template-rows: 2fr 3fr;
+}
+
+.promotion {
+}
+
+.livechat {
+	padding: 10px;
+	position: relative;
+}
+
+.livechat-wrapper {
+	display: grid;
+	grid-template-rows: 1fr 9fr;
+	width: 100%;
+	height: 100%;
+}
+
+.livechat-header {
+	/* Inside */
+	text-align: center;
+	color: rgba(178, 190, 195, 1);
+	font-weight: bold;
+
+	/* Outside */
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+.livechat-dialogue {
+	padding: 0px 5px;
+}
+
+.livechat-dialogue > div {
+	background: rgba(45, 52, 54, 1);
+	width: 100%;
+	height: 100%;
+	display: grid;
+	align-items: flex-end;
+	grid-template-rows: 8fr 1fr;
+
+	/* Outside */
+	box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+.blur-block {
+	width: 100%;
+	height: 100%;
+	filter: blur(3px);
+}
+
+.signin-Google {
+	position: absolute;
+	text-align: center;
+	top: calc(50% - 21px);
+	left: calc(50% - 90px);
+}
+
+.greetings-chat {
+	display: none;
+	position: absolute;
+	top: calc(50% - 25px);
+	left: calc(50% - 150px);
+	transition: 1s;
+	opacity: 1;
+}
+
+.greetings-chat > h2 {
+	color: rgba(223, 230, 233, 1);
+}
+
+.greetings-chat span {
+	padding: 15px;
+	font-size: 40px;
+}
+
+.message-input-block {
+	display: grid;
+	width: 100%;
+	grid-template-columns: 50px 1fr 50px;
+}
+
+.message-input-block > div {
+	align-self: center;
+	justify-self: center;
+}
+
+.message-input {
+	background: rgba(108, 92, 231, 1);
+	padding: 10px;
+	border-radius: 10px;
+	border: none;
+	width: 350px;
+	outline: none;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.message-input::placeholder {
+	color: rgba(45, 52, 54, 1);
+	font-size: 16px;
+}
+
+.send-message-button {
+	background: rgba(108, 92, 231, 1);
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	border: 1px solid rgba(108, 92, 231, 1);
+	outline: none;
+	transition: border-color 0.3s;
+
+	background-image: url(./img/send.svg);
+	background-size: 20px 20px;
+	background-position: top 7px left 4px;
+	background-repeat: no-repeat;
+}
+
+.send-message-button:hover {
+	border-color: rgba(223, 230, 233, 1);
+}
+.send-message-button:active {
+	transform: scale(1.1);
+}
+
+.profile-icon {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.message-list-block {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 50px 50px 50px;
+}
+
+.my-message-block {
+	display: grid;
+	justify-content: flex-end;
+	cursor: default;
+	width: 100%;
+}
+
+.my-message-block > div,
+.enemy-message-block > div {
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 7px;
+}
+
+.my-message-block img,
+.enemy-message-block img {
+	width: 30px;
+	height: 30px;
+	padding: 10px;
+	border-radius: 50%;
+}
+
+.my-message-block > p,
+.enemy-message-block > p {
+	padding: 10px;
+}
+
+.text-mess {
+	color: rgba(178, 190, 195, 1);
+}
+
+.name-mess {
+	color: rgba(108, 92, 231, 1);
+}
+
+.enemy-message-block {
+	display: grid;
+	justify-content: flex-start;
+	cursor: default;
+	width: 100%;
+}
+
+.common-donate-block {
+	grid-column: 2/5;
+	display: grid;
+}
+
+.common-donate-button {
+	font-weight: bold;
+	width: 450px;
+	height: 50px;
+	justify-self: center;
+	align-self: flex-end;
+	background: rgba(108, 92, 231, 1);
+	font-size: 18px;
+	border: none;
+	color: rgba(178, 190, 195, 1);
+	border-radius: 300px 300px 0px 0px;
+	transition: 0.3s;
+	outline: none;
+}
+
+.common-donate-button:hover {
+	color: rgba(45, 52, 54, 1);
 }

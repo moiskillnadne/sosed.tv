@@ -46,6 +46,16 @@ const VideoplayerList = () => {
           <img src={PreviewVideo} alt=""/>
         </div>
       </div>
+      <div className="preview_wrap">
+        <div className="preview">
+          <img src={PreviewVideo} alt=""/>
+        </div>
+      </div>
+      <div className="preview_wrap">
+        <div className="preview">
+          <img src={PreviewVideo} alt=""/>
+        </div>
+      </div>
     </div>
   )
 };

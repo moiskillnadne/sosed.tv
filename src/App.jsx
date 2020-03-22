@@ -1,14 +1,12 @@
 import React, {
   useState
 } from 'react';
-import './App.css';
 
 // Components
 import VideoContainer from './components/media';
 import DonateContainer from './components/donate';
 import ChatContainer from './components/chat';
 import Rules from './components/rules';
-import SignUp from './components/singup'
 
 function App() {
 
@@ -37,13 +35,10 @@ function App() {
 
       <DonateContainer />
 
-      <ChatContainer />
+      <ChatContainer isSignIn = { isSignIn }
+                      setIsSignIn = { setIsSignIn }   />
 
       <Rules CloseModalFun = { CloseModalFun }/>
-
-      <SignUp CloseModalFun = { CloseModalFun }
-              isSignIn = {isSignIn}
-              setIsSignIn = {setIsSignIn} />
       
     </div>
   );

@@ -1,6 +1,8 @@
 import React from 'react';
 
+// Components
 import DonateIcon from './DonateIcon';
+import CommonDonate from './CommonDonate';
 
 // Image
 import ManIcon from '../../img/me.jpeg';
@@ -39,6 +41,8 @@ const DonateContainer = () => {
                                                    personAvatar = {item.avatar}
                                                    key = {item.name}  />)
       }
+
+      <CommonDonate />
 
     </div>
   );

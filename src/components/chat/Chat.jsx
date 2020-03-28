@@ -64,7 +64,7 @@ const Chat = props => {
             <div>
               {
                 props.profileData ?
-                  <img src={props.profileData.imageUrl} alt="" className="profile-icon"/> : 
+                  <img src={props.profileData.icon} alt="" className="profile-icon"/> : 
                   <img src='' alt=''/>
 
               }

@@ -329,8 +329,49 @@ h6 {
 .signin-Google {
 	position: absolute;
 	text-align: center;
-	top: calc(50% - 21px);
+	top: calc(40% - 21px);
 	left: calc(50% - 90px);
+}
+
+.signin-vk {
+	position: absolute;
+	text-align: center;
+	top: calc(60% - 21px);
+	left: calc(50% - 90px);
+	cursor: pointer;
+}
+
+.signin-vk:hover {
+	opacity: 0.9;
+}
+
+.vk-auth-icon {
+	margin-right: 10px;
+	padding: 10px;
+	width: 18px;
+	height: 18px;
+}
+
+.vk-auth-icon > img {
+	width: 18px;
+	height: 18px;
+}
+
+.signin-vk > button {
+	/* Btn styles */
+	display: inline-flex;
+	width: 180px;
+	height: 43px;
+	border-radius: 2px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(0, 0, 0, 0.54);
+	font-family: Roboto, sans-serif;
+	padding: 0px;
+}
+
+.signin-vk span {
+	padding: 10px 10px 10px 0px;
 }
 
 .greetings-chat {

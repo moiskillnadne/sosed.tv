@@ -35,39 +35,51 @@ const ChatContainer = props => {
     setProfileData
    ] = useState({});
 
+// Auth animation
+   const AuthAnim = () => {
+    GButtonRef.current.style.display = 'none';
+    VKButtonRef.current.style.display = 'none';
+    GreetingsRef.current.style.display = 'block';
+    setTimeout(() => {
+      GreetingsRef.current.style.opacity = '0';
+    }, 1000)
+
+    setTimeout(() => {
+      setIsSignIn(true);
+    }, 2000)
+   }
+
 
   const GoogleSignIn = responce => {
 
+    // Save profile data in state
     SetProfileDataHelper(setProfileData, responce, 'google');
 
-    GButtonRef.current.style.display = 'none';
-    VKButtonRef.current.style.display = 'none';
-    GreetingsRef.current.style.display = 'block';
-    setTimeout(() => {
-      GreetingsRef.current.style.opacity = '0';
-    }, 1000)
-
-    setTimeout(() => {
-      setIsSignIn(true);
-    }, 2000)
+    // Start animation for unlock chat window
+    AuthAnim();
   };
 
-  const VkSignIn = () => {
-    VK.Auth.login( data => {
-      console.log(data.session)
-      SetProfileDataHelper(setProfileData, data.session, 'vk');
-    })
+  const VkSignIn = async () => {
+    await VK.Auth.login( data => {
+      console.log(data)
+      if(data.session) {
+        console.log(data)
+        SetProfileDataHelper(setProfileData, data.session.user, 'vk');
 
-    GButtonRef.current.style.display = 'none';
-    VKButtonRef.current.style.display = 'none';
-    GreetingsRef.current.style.display = 'block';
-    setTimeout(() => {
-      GreetingsRef.current.style.opacity = '0';
-    }, 1000)
+        if( data.status === 'connected' ) {
+          VK.Api.call('users.get', {
+            user_ids: data.session.user.id,
+            fields: ["photo_200", "photo_50"],
+            v: '5.73',
+          }, (res) => {
+            SetProfileDataHelper(setProfileData, res.response[0], 'vk');
+            AuthAnim();
+          })
+        }
+      }
+      console.log(data)
+    });
 
-    setTimeout(() => {
-      setIsSignIn(true);
-    }, 2000)
     
   }
 

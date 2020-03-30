@@ -19,10 +19,10 @@ export const SetProfileDataHelper = (setState, data, service) => {
       break;
     case 'vk':
       setState({
-        name: data.user.first_name,
-        surname: data.user.last_name,
-        icon: '',
-        profileID: ''
+        name: data.first_name,
+        surname: data.last_name,
+        icon: data.photo_50 ? data.photo_50 : '',
+        profileID: data.id,
       })
       break;
     default:

@@ -38,6 +38,7 @@ const Chat = props => {
 
   const [
     messageList,
+    // eslint-disable-next-line no-unused-vars
     setMessageList
   ] = useState(testMessageList)
 
@@ -50,12 +51,12 @@ const Chat = props => {
         <div>
           <div className="message-list-block">
             {
-              messageList.map( item => {
+              messageList.map( (item, index) => {
                 if(item.isMe) {
-                  return <MyMessage data = { item }/>
+                  return <MyMessage data = { item } key = { index }/>
                 }
 
-                return <EnemyMessage data = { item }/> 
+                return <EnemyMessage data = { item } key = { index }/> 
 
               })
             }

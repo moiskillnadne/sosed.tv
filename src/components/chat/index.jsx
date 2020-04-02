@@ -111,7 +111,7 @@ const ChatContainer = props => {
           </div>
           <div className="signin-vk"
                ref={VKButtonRef}>
-            <button onClick={VkSignIn}>
+            <button onClick={VkSignIn} >
               <div className="vk-auth-icon">
                 <img src={VKICON} alt=""/>
               </div>
